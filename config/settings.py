@@ -41,12 +41,12 @@ INSTALLED_APPS = [
     'core',
     'accounts',
     'companies',
-    'drivers'
+    'drivers',
     'operations',
     'settlements',
     'assets',
     'maintenance',
-    'audit'
+    'audit',
 ]
 
 MIDDLEWARE = [
@@ -107,6 +107,9 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+# Custom User Model
+AUTH_USER_MODEL = 'accounts.Employee'
 
 
 # Internationalization
