@@ -26,7 +26,7 @@ class Company(AddressMixin,models.Model):
     class Meta: 
         ordering = ['name']
         verbose_name = 'Company'
-        verbose_name_plural = 'Companies'
+        verbose_name_plural = 'Companies' 
 
     def __str__(self) -> str: 
         return self.name

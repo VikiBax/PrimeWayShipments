@@ -33,6 +33,9 @@ class Driver(AddressMixin, models.Model):
 
     default_refunds_taxable = models.BooleanField(default=False)
 
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
     class Meta: 
         ordering = ['last_name', 'first_name']
         verbose_name = 'Driver'
@@ -46,3 +49,4 @@ class Driver(AddressMixin, models.Model):
         return self.full_name
     
     
+
