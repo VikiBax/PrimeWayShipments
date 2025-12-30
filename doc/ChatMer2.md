@@ -9,10 +9,6 @@ erDiagram
       string name
       bool active
       string ein
-      int next_load_number
-      int next_settlement_number
-      string load_prefix
-      string settlement_prefix
       datetime created_at
       datetime updated_at
     }
@@ -22,13 +18,14 @@ erDiagram
       string username
       string email
       string role
-      bool is_active
+      bool status
     }
 
     DRIVER {
       int id PK
       string first_name
       string last_name
+      string middle_name
       string phone
       string email
       string ssn_last4
@@ -40,6 +37,8 @@ erDiagram
       decimal default_flat
       bool default_refunds_taxable
       string notes
+      datetime created_at
+      datetime updated_at
     }
 
     TRUCK {
@@ -50,6 +49,8 @@ erDiagram
       date registration_expiration
       date inspection_expiration
       string notes
+      datetime created_at
+      datetime updated_at
     }
 
     TRAILER {
@@ -61,6 +62,8 @@ erDiagram
       date registration_expiration
       date inspection_expiration
       string notes
+      datetime created_at
+      datetime updated_at
     }
 
     %% =========================
@@ -72,20 +75,17 @@ erDiagram
       int id PK
       string name
       string mc_number
-      string dot_number
-      string billing_email
-      string billing_phone
       bool active
-      string notes
+      datetime created_at
+      datetime updated_at
     }
 
     BROKER_ALIAS {
       int id PK
       int broker_company_id FK
-      string display_name
-      string email
-      string phone
-      bool active
+      string alias_name
+      datetime created_at
+      datetime updated_at
     }
 
     LOAD {
@@ -107,9 +107,7 @@ erDiagram
       string pickup_location
       string dropoff_location
 
-      string contact_name
-      string contact_phone
-      string contact_email
+      string contact_info
 
       decimal base_rate
       decimal miles
@@ -132,6 +130,7 @@ erDiagram
       datetime created_at
     }
 
+    %% ----- Not Yet Made ----
     %% =========================
     %% Settlements (money)
     %% =========================
